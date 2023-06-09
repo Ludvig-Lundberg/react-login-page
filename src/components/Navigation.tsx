@@ -7,10 +7,10 @@ const Navigation = () => {
 	return (
 		<header className="header">
 			<nav className="nav-header">
-				<button className="menu-button" onClick={() => setShowMenu(!showMenu)}>
+				<button className={showMenu ? "menu-button menu-button-active" : "menu-button"} onClick={() => setShowMenu(!showMenu)}>
 					<i className="fa-solid fa-bars"></i>
 				</button>
-				<h1 className={showMenu ? "logo logo-active" : "logo"}>
+				<h1 className={showMenu ? "logo" : "logo"}>
 					<Link className="logo-link" to={"/"}>
 						App
 					</Link>

@@ -1,4 +1,5 @@
 @import "variables";
+@import "header";
 
 * {
 	margin: 0;
@@ -18,7 +19,12 @@ ul,
 ol {
 	list-style: none;
 }
-a {
+a,
+button {
 	text-decoration: none;
 	transition: all 0.2s;
+	color: white;
+}
+a:hover {
+	color: $secondary;
 }
