@@ -1,5 +1,6 @@
 @import "variables";
 @import "header";
+@import "intro";
 
 * {
 	margin: 0;
@@ -13,6 +14,9 @@ body {
 	main {
 		min-height: calc(100vh - 50px);
 		width: 100vw;
+		padding: 1.5rem 0;
+		display: flex;
+		justify-content: center;
 	}
 }
 ul,
@@ -24,6 +28,9 @@ button {
 	text-decoration: none;
 	transition: all 0.2s;
 	color: white;
+	background: none;
+	border: none;
+	cursor: pointer;
 }
 a:hover {
 	color: $secondary;

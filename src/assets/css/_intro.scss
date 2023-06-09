@@ -1,0 +1,49 @@
+@use "variables";
+
+.intro {
+	padding: 2rem 0;
+	display: flex;
+	flex-direction: column;
+	.intro-content {
+		width: 90%;
+		margin: auto;
+		text-align: center;
+		margin-bottom: 2rem;
+		&:nth-child(1) > .intro-icon {
+			color: $secondary;
+		}
+		&:nth-child(2) > .intro-icon {
+			color: yellow;
+		}
+		&:nth-child(3) > .intro-icon {
+			color: lightgray;
+		}
+
+		.intro-icon {
+			font-size: 3rem;
+		}
+		.intro-title {
+			color: $primary;
+			margin-bottom: 1rem;
+			text-transform: uppercase;
+		}
+		.intro-text {
+			color: rgb(246, 246, 246);
+		}
+		.intro-button {
+			font-size: 1.1rem;
+			padding: 0.8rem;
+			background-color: $primary;
+			border-radius: 6px;
+			a {
+				color: $background;
+			}
+			&:hover {
+				background-color: $accent;
+				a {
+					color: black;
+				}
+			}
+		}
+	}
+}
