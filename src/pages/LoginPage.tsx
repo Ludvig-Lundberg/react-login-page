@@ -32,6 +32,17 @@ const LoginPage = () => {
 				<button type="submit" className="account-form-button">
 					Login
 				</button>
+				<div className="account-form-response">
+					{mutation.isLoading ? (
+						"Loading"
+					) : (
+						<>
+							{mutation.isError ? <div>Check username and password</div> : null}
+
+							{mutation.isSuccess ? <div>Logged in</div> : null}
+						</>
+					)}
+				</div>
 			</form>
 		</div>
 	);
