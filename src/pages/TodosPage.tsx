@@ -23,7 +23,9 @@ const TodosPage = () => {
 			{isSuccess && (
 				<ul>
 					{data.data.data.map((todo: { id: number; title: string }) => (
-						<li key={todo.id}>{todo.title}</li>
+						<li className="todo" key={todo.id}>
+							{todo.title}
+						</li>
 					))}
 				</ul>
 			)}
