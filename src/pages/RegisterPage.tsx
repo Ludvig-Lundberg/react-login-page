@@ -5,11 +5,10 @@ import { encodeToBase64 } from "../services/encoder";
 import { Link } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
-export let encoded: string;
 
-const LoginPage = () => {
+const RegisterPage = () => {
 	const mutation = useMutation((info: any) => {
-		return axios.post(baseUrl + "/login", info);
+		return axios.post(baseUrl + "/register", info);
 	});
 
 	const handleSubmit = (e: any) => {
@@ -20,7 +19,7 @@ const LoginPage = () => {
 		const formJson = Object.fromEntries(formData.entries());
 		const { username, password } = formJson;
 
-		encoded = encodeToBase64(username.toString(), password.toString());
+		const encoded = encodeToBase64(username.toString(), password.toString());
 		mutation.mutate({ credentials: encoded });
 	};
 
@@ -34,23 +33,23 @@ const LoginPage = () => {
 					<input className="account-form-input" name="password" type="text" placeholder="Password" />
 				</label>
 				<button type="submit" className="account-form-button">
-					Login
+					Register
 				</button>
 				<div className="account-form-response">
 					{mutation.isLoading ? (
 						"Loading"
 					) : (
 						<>
-							{mutation.isError ? <div>Check username and password</div> : null}
+							{mutation.isError ? <div>Check username and password ❌</div> : null}
 
-							{mutation.isSuccess ? <div>Logged in</div> : null}
+							{mutation.isSuccess ? <div>Registered ✔️</div> : null}
 						</>
 					)}
 				</div>
 			</form>
-			<Link to={"/register"}>Don't have account? - Register</Link>
+			<Link to={"/login"}>Already have account? - Login</Link>
 		</div>
 	);
 };
 
-export default LoginPage;
+export default RegisterPage;
