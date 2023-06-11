@@ -1,12 +1,13 @@
 import axios from "axios";
 import {} from "react";
 import { useMutation } from "react-query";
+import { encodeToBase64 } from "../services/encoder";
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
+export let encoded: string;
 
 const LoginPage = () => {
 	const mutation = useMutation((info: any) => {
-		console.log(baseUrl);
 		return axios.post(baseUrl + "/login", info);
 	});
 
@@ -17,7 +18,9 @@ const LoginPage = () => {
 		const formData = new FormData(form);
 		const formJson = Object.fromEntries(formData.entries());
 		const { username, password } = formJson;
-		mutation.mutate({ username, password });
+
+		encoded = encodeToBase64(username.toString(), password.toString());
+		mutation.mutate({ credentials: encoded });
 	};
 
 	return (
