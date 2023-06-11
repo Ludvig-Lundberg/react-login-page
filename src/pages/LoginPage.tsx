@@ -2,11 +2,12 @@ import axios from "axios";
 import {} from "react";
 import { useMutation } from "react-query";
 
-const url = import.meta.env.BASE_URL;
+const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 
 const LoginPage = () => {
 	const mutation = useMutation((info: any) => {
-		return axios.post(url + "/login", info);
+		console.log(baseUrl);
+		return axios.post(baseUrl + "/login", info);
 	});
 
 	const handleSubmit = (e: any) => {
@@ -21,14 +22,16 @@ const LoginPage = () => {
 
 	return (
 		<div className="account-form-container">
-			<form onSubmit={(e) => handleSubmit(e)}>
+			<form className="account-form" onSubmit={(e) => handleSubmit(e)}>
 				<label htmlFor="username">
-					<input name="username" type="text" placeholder="Username" />
+					<input className="account-form-input" name="username" type="text" placeholder="Username" />
 				</label>
 				<label htmlFor="password">
-					<input name="password" type="text" placeholder="Password" />
+					<input className="account-form-input" name="password" type="text" placeholder="Password" />
 				</label>
-				<button type="submit">Login</button>
+				<button type="submit" className="account-form-button">
+					Login
+				</button>
 			</form>
 		</div>
 	);

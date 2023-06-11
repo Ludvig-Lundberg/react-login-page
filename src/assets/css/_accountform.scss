@@ -1,0 +1,32 @@
+@use "variables";
+
+.account-form-container {
+	width: 80%;
+	background-color: $background2;
+	border-radius: 6px;
+	.account-form {
+		display: flex;
+		flex-direction: column;
+		padding: 1rem 0;
+		.account-form-input {
+			margin: auto;
+			display: block;
+			padding: 0.5rem 0.6rem;
+			border-radius: 6px;
+			margin-bottom: 1rem;
+		}
+		.account-form-button {
+			font-size: 1.1rem;
+			padding: 0.8rem;
+			background-color: $primary;
+			border-radius: 6px;
+			color: $background;
+			margin: auto;
+			margin-bottom: 1rem;
+			&:hover {
+				background-color: $accent;
+				color: black;
+			}
+		}
+	}
+}
