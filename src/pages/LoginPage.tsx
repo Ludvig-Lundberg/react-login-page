@@ -2,12 +2,13 @@ import axios from "axios";
 import {} from "react";
 import { useMutation } from "react-query";
 import { encodeToBase64 } from "../services/encoder";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const baseUrl = import.meta.env.VITE_APP_BASE_URL;
 export let encoded: string;
 
 const LoginPage = () => {
+	const navigate = useNavigate();
 	const mutation = useMutation((info: any) => {
 		return axios.post(baseUrl + "/login", info);
 	});
@@ -24,6 +25,10 @@ const LoginPage = () => {
 		mutation.mutate({ credentials: encoded });
 	};
 
+	if (mutation.isSuccess) {
+		navigate("/todos");
+	}
+
 	return (
 		<div className="account-form-container">
 			<form className="account-form" onSubmit={(e) => handleSubmit(e)}>
@@ -31,7 +36,7 @@ const LoginPage = () => {
 					<input className="account-form-input" name="username" type="text" placeholder="Username" />
 				</label>
 				<label htmlFor="password">
-					<input className="account-form-input" name="password" type="text" placeholder="Password" />
+					<input className="account-form-input" name="password" type="password" placeholder="Password" />
 				</label>
 				<button type="submit" className="account-form-button">
 					Login
@@ -43,7 +48,7 @@ const LoginPage = () => {
 						<>
 							{mutation.isError ? <div>Check username and password</div> : null}
 
-							{mutation.isSuccess ? <div>Logged in</div> : null}
+							{mutation.isSuccess ? <p>loggin in</p> : null}
 						</>
 					)}
 				</div>

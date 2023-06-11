@@ -30,7 +30,7 @@ const RegisterPage = () => {
 					<input className="account-form-input" name="username" type="text" placeholder="Username" />
 				</label>
 				<label htmlFor="password">
-					<input className="account-form-input" name="password" type="text" placeholder="Password" />
+					<input className="account-form-input" name="password" type="password" placeholder="Password" />
 				</label>
 				<button type="submit" className="account-form-button">
 					Register
