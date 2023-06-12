@@ -47,3 +47,18 @@
 		}
 	}
 }
+
+@media only screen and (min-width: 600px) {
+	.intro {
+		.intro-content {
+			width: 80%;
+		}
+	}
+}
+@media only screen and (min-width: 1000px) {
+	.intro {
+		.intro-content {
+			width: 60%;
+		}
+	}
+}
