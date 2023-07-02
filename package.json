@@ -11,7 +11,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@tanstack/react-table": "^8.9.2",
+		"@tanstack/react-table": "^8.9.3",
 		"axios": "^1.4.0",
 		"base-64": "^1.0.0",
 		"react": "^18.2.0",
