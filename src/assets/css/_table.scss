@@ -1,0 +1,25 @@
+@use "variables";
+
+.todos-table {
+	padding: 0.5rem;
+	background-color: white;
+	color: black;
+	border-radius: 6px;
+	.todos-table-row {
+	}
+	.todos-table-head {
+		color: $primary;
+		.todos-table-row {
+		}
+		.todos-table-header {
+		}
+	}
+	.todos-table-body {
+		.todos-table-row {
+		}
+		.todos-table-data {
+			border: 1px solid $background;
+			padding: 4px;
+		}
+	}
+}

@@ -3,6 +3,7 @@
 @import "intro";
 @import "accountform";
 @import "todos";
+@import "table";
 
 * {
 	margin: 0;
@@ -36,4 +37,8 @@ button {
 }
 a:hover {
 	color: $secondary;
+}
+h2 {
+	text-align: center;
+	padding-bottom: 1rem;
 }

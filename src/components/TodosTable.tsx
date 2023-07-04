@@ -31,21 +31,25 @@ const TodosTable: React.FC<iTodosTable> = ({ todos }) => {
 	});
 
 	return (
-		<table>
-			<thead>
+		<table className="todos-table">
+			<thead className="todos-table-head">
 				{table.getHeaderGroups().map((headerGroup) => (
-					<tr key={headerGroup.id}>
+					<tr key={headerGroup.id} className="todos-table-row">
 						{headerGroup.headers.map((header) => (
-							<th key={header.id}>{flexRender(header.column.columnDef.header, header.getContext())}</th>
+							<th className="todos-table-header" key={header.id}>
+								{flexRender(header.column.columnDef.header, header.getContext())}
+							</th>
 						))}
 					</tr>
 				))}
 			</thead>
-			<tbody>
+			<tbody className="todos-table-body">
 				{table.getRowModel().rows.map((row) => (
-					<tr key={row.id}>
+					<tr className="todos-table-row" key={row.id}>
 						{row.getVisibleCells().map((cell) => (
-							<td key={cell.id}>{flexRender(cell.column.columnDef.cell, cell.getContext())}</td>
+							<td className="todos-table-data" key={cell.id}>
+								{flexRender(cell.column.columnDef.cell, cell.getContext())}
+							</td>
 						))}
 					</tr>
 				))}

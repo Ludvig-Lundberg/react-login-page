@@ -33,7 +33,7 @@ const TodosPage = () => {
 							<div>Could not load table</div>
 						</>
 					)}
-					<h2>ul</h2>
+					<h2>List</h2>
 					<ul>
 						{data.data.data.map((todo: { id: number; title: string }) => (
 							<li className="todo" key={todo.id}>
